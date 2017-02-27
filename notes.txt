@@ -25,3 +25,6 @@ Collection names:
     14.csv - 足太陽膀胱經
     18.csv - 督脈
     20.csv - 任脈
+
+TODO:
+    * change ui titles to chinese
