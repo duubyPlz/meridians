@@ -1,0 +1,9 @@
+Search for:                        Returns:
+    1. sickness; e.g. "咳喘"            => [list] pressure points; e.g. "中府"
+    2. pressure point                   => [list] sicknesses
+    3. meridian; e.g. "手太陰肺經"       => table(s)
+    4. sickness class; e.g. "血症"      => [rows] pressure points with search term as "true"
+
+Features:
+    * each result term should be a link, clicking on it will search for it instead
+    * display all meridian tables

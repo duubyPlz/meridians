@@ -7,8 +7,18 @@ import './main.html';
 
 Template.main.rendered = function() {
   $('#searchbutton').on('click', function() {
+    search();
+  });
+  $('#searchbox').keydown(function (e) {
+    if (e.keyCode == 13)  {
+        e.preventDefault();
+        search();
+    }
+  });
+
+  function search() {
     console.log('clicked');
     $('#buffer').slideUp();
     $('#results-module').show("slow");
-  });
+  }
 }
