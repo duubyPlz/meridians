@@ -6,4 +6,22 @@ Search for:                        Returns:
 
 Features:
     * each result term should be a link, clicking on it will search for it instead
+        * [lists] will be like google results (add descriptions)
     * display all meridian tables
+
+Collection names:
+     1.csv - 手太陰肺經
+     2.csv - 手陽明大腸經
+     3.csv - 手厥陰心包經
+     4.csv - 手少陽三焦經
+     5.csv - 手少陰心經
+     6.csv - 手太陽小腸經
+     7.csv - 足太陰脾經
+     8.csv - 足陽明胃經
+    10.csv - 足厥陰肝經
+    11.csv - 足少陽膽經a
+    12.csv - 足少陽膽經b
+    13.csv - 足少陰腎經
+    14.csv - 足太陽膀胱經
+    18.csv - 督脈
+    20.csv - 任脈
