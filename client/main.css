@@ -1,1 +1,63 @@
-/* CSS declarations go here */
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+body {
+  font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+#buffer {
+  height: 300px;
+}
+
+#search-module {
+  width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+input#searchbox {
+  height: 45px;
+  font-weight: 300;
+  font-size: 18px;
+  border: 2px solid #ccc;
+}
+
+input#searchbox::-webkit-input-placeholder {
+  font-weight: 300;
+}
+
+input#searchbox:focus {
+  outline: none;
+  /*box-shadow: 0 0 20px #92e2ff;*/
+  box-shadow: none;
+  border: 2px solid #1caff6;
+}
+
+#searchbutton {
+  height: 45px;
+  border: 2px solid #ccc;
+  border-left: none;
+  box-shadow: none;
+  position: relative;
+  left: 1px;
+  font-weight: 300;
+  font-size: 16px;
+  color: #999;
+}
+
+#searchbutton:hover,
+#searchbutton:focus {
+  outline: none;
+  background-color: white;
+  color: #333;
+}
+
+#results-module {
+  width: 1000px;
+  margin: auto;
+  background-color: red;
+  position: relative;
+  top: 20px;
+}

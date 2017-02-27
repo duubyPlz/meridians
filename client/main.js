@@ -6,5 +6,9 @@ import './bootstrap3/js/bootstrap.min.js'
 import './main.html';
 
 Template.main.rendered = function() {
-
+  $('#searchbutton').on('click', function() {
+    console.log('clicked');
+    $('#buffer').slideUp();
+    $('#results-module').show("slow");
+  });
 }

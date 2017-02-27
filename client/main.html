@@ -1,7 +1,22 @@
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>meridians</title>
+  <link rel="icon" href="../icon.ico">
 </head>
 
 <template name="main">
-  main
+  <div id='buffer'></div>
+  <div class="input-group" id='search-module'>
+    <input id='searchbox' type="text" class="form-control" placeholder="change placeholder" />
+    <span class="input-group-btn">
+      <button id='searchbutton' class="btn btn-default" type="button"><i class='fa fa-search'></i></button>
+    </span>
+  </div><!-- /input-group -->
+
+  <div id='results-module' style='display:none'>
+    results
+  </div>
 </template>
