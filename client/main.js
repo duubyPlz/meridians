@@ -1,24 +1,20 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
-import './jquery/jquery-1.10.2.js'
-import './bootstrap3/js/bootstrap.min.js'
-import './main.html';
-
-Template.main.rendered = function() {
-  $('#searchbutton').on('click', function() {
-    search();
-  });
-  $('#searchbox').keydown(function (e) {
-    if (e.keyCode == 13)  {
-        e.preventDefault();
-        search();
-    }
-  });
-
-  function search() {
-    console.log('clicked');
-    $('#buffer').slideUp();
-    $('#results-module').show("slow");
-  }
+if (Meteor.isClient) {
+  Meteor.subscribe('collection1_front');
+  Meteor.subscribe('collection2_front');
+  Meteor.subscribe('collection3_front');
+  Meteor.subscribe('collection4_front');
+  Meteor.subscribe('collection5_front');
+  Meteor.subscribe('collection6_front');
+  Meteor.subscribe('collection7_front');
+  Meteor.subscribe('collection8_front');
+  Meteor.subscribe('collection10_front');
+  Meteor.subscribe('collection11_front');
+  Meteor.subscribe('collection12_front');
+  Meteor.subscribe('collection13_front');
+  Meteor.subscribe('collection14_front');
+  Meteor.subscribe('collection18_front');
+  Meteor.subscribe('collection20_front');
 }
