@@ -20,6 +20,6 @@ Template.main.rendered = function() {
   }
 
   console.log(Collection1.find({}));
-  console.log(Collection1.find({}).count());
+  console.log(Collection18.find({}).count());
 
 }
