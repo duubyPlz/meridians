@@ -59,4 +59,25 @@ input#searchbox:focus {
   margin: auto;
   position: relative;
   top: 20px;
+  margin-bottom: 50px;
+}
+
+.info {
+  color: #999;
+  font-size: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.list-result {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.list-title {
+  font-size: 120%;
+}
+
+.list-description {
+  padding-top: 10px;
 }

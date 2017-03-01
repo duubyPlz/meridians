@@ -8,6 +8,7 @@ Features:
     * each result term should be a link, clicking on it will search for it instead
         * [lists] will be like google results (add descriptions)
     * display all meridian tables
+    * switch to show/hide list descriptions
 
 Collection names:
      1.csv - 手太陰肺經
