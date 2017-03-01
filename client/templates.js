@@ -4,22 +4,36 @@ import './templates.html';
 
 Template.main.rendered = function() {
   $('#searchbutton').on('click', function() {
-    search();
+    var input = $('#searchbox').val();
+    search(input);
   });
   $('#searchbox').keydown(function (e) {
     if (e.keyCode == 13)  {
         e.preventDefault();
-        search();
+        var input = $(this).val();
+        search(input);
     }
   });
 
-  function search() {
-    console.log('clicked');
+  function search(inputRaw) {
     $('#buffer').slideUp();
     $('#results-module').show("slow");
+
+    // 0. Sanitise input [TODO revise blacklist]
+    var input = inputRaw.replace('[;\ ,./');
+    console.log("Searching: " + input);
+
+    // 1. Looking at all collections for match in 其他
+    var regex = '.*' + input + '.*';
+    var results = Collection1.find({
+      其他: { '$regex': regex },
+    }).fetch();
+
+    // 2. Display results.
+    if (results.length > 0) {
+      
+    } else {
+      
+    }
   }
-
-  console.log(Collection1.find({}));
-  console.log(Collection18.find({}).count());
-
 }

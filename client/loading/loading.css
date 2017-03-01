@@ -67,7 +67,10 @@
 }
 
 .loader__label.title {
+  font-size: 80%;
   color: #333;
+  position: relative;
+  top: 10px;
 }
 
 @-webkit-keyframes loader-figure {
