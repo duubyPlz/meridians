@@ -23,13 +23,17 @@ Template.main.rendered = function() {
 
   $('#searchbutton').on('click', function() {
     var input = $('#searchbox').val();
-    search(input);
+    if (input != "") {
+      search(input);
+    }
   });
   $('#searchbox').keydown(function (e) {
     if (e.keyCode == 13)  {
-        e.preventDefault();
-        var input = $(this).val();
+      e.preventDefault();
+      var input = $(this).val();
+      if (input != "") {
         search(input);
+      }
     }
   });
 

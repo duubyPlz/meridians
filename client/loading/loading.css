@@ -40,7 +40,7 @@
   height: 0;
   width: 0;
   box-sizing: border-box;
-  border: 0 solid #FC3D00;
+  border: 0 solid #d43d21;
   border-radius: 50%;
   -webkit-animation: loader-figure 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
   -moz-animation: loader-figure 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -59,7 +59,7 @@
   font-size: 0.875em;
   letter-spacing: 0.1em;
   line-height: 1.5em;
-  color: #FC3D00;
+  color: #d43d21;
   white-space: nowrap;
   -webkit-animation: loader-label 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
   -moz-animation: loader-label 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -68,7 +68,7 @@
 
 .loader__label.title {
   font-size: 80%;
-  color: #333;
+  color: #2b3237;
   position: relative;
   top: 10px;
 }
