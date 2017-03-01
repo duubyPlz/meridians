@@ -80,7 +80,7 @@ Template.main.rendered = function() {
         resultObj.append(string);
       }
     } else {
-      $('#results-module').html('No sickness results for: "' + input + '".');
+      $('#results-module').html('No sickness results for: "' + input + '"');
     }
   }
 }

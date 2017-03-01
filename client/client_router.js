@@ -6,7 +6,7 @@ Router.configure({
 Router.route('/', {
   path: '/',
   template: 'main',
-  layoutTemplate: 'layout',
+  // layoutTemplate: 'layout',
   waitOn: function() {
     return [
       Meteor.subscribe('collection1_front'),
