@@ -30,3 +30,4 @@ Collection names:
 TODO:
     * change ui titles to chinese
     * why do some 穴位's have asterisks? look at what's in mongodb
+    * in addition to description, add which meridian (collection name)
