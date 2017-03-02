@@ -1,3 +1,33 @@
+.fa.loading-fa { color: #d43d21; font-size: 20px; line-height: 50px; }
+/* color from http://clrs.cc/ - holler */
+
+@-webkit-keyframes heartbeat{
+    0%{-webkit-transform:scale(1)}
+    50%{-webkit-transform:scale(1.4)}
+    100%{-webkit-transform:scale(1)}
+}
+@-moz-keyframes heartbeat{
+    0%{-moz-transform:scale(1)}
+    50%{-moz-transform:scale(1.4)}
+    100%{-moz-transform:scale(1)}
+}
+@-o-keyframes heartbeat{
+    0%{-o-transform:scale(1)}
+    50%{-o-transform:scale(1.4)}
+    100%{-o-transform:scale(1)}
+}
+@keyframes heartbeat{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.4)}
+    100%{transform:scale(1)}
+}
+
+.heartbeat{ -webkit-animation-name:heartbeat; -moz-animation-name:heartbeat; -o-animation-name:heartbeat; animation-name:heartbeat; }
+.animate-infinite-heartbeat {
+  -webkit-animation: heartbeat 1.15s infinite;
+  animation: heartbeat 1.15s infinite;
+}
+
 .loader body {
   height: 100vh;
   font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
@@ -17,8 +47,7 @@
   opacity: 0.25;
 }
 
-.loader,
-.loader__figure {
+.loader {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -36,17 +65,6 @@
   width: 2em;
 }
 
-.loader__figure {
-  height: 0;
-  width: 0;
-  box-sizing: border-box;
-  border: 0 solid #d43d21;
-  border-radius: 50%;
-  -webkit-animation: loader-figure 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-  -moz-animation: loader-figure 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-  animation: loader-figure 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
 .loader__label {
   float: left;
   margin-left: 50%;
@@ -56,7 +74,7 @@
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
   margin: 0.5em 0 0 50%;
-  font-size: 0.875em;
+  /*font-size: 0.875em;*/
   letter-spacing: 0.1em;
   line-height: 1.5em;
   color: #d43d21;
@@ -83,7 +101,7 @@
 }
 
 .title {
-  font-size: 80%;
+  font-size: 90%;
   color: #2b3237;
   position: relative;
   top: 10px;

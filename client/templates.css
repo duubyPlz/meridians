@@ -82,9 +82,22 @@ input#searchbox:focus {
 }
 
 .list-title {
-  font-size: 120%;
+  font-size: 125%;
+  color: #d43d21;
+}
+
+.list-title:hover,
+.list-title:focus {
+  color: #d43d21;
+  cursor: pointer;
+}
+
+.list-meridian {
+  font-size: 90%;
+  color: #666;
 }
 
 .list-description {
   padding-top: 10px;
+  font-size: 105%;
 }

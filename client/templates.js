@@ -48,24 +48,16 @@ Template.main.rendered = function() {
     }
 
     // > nontrivial search, continue.
-    console.log("Searching: " + input);
-
     // 1. Looking at all collections for match in 其他
     var regex = '.*' + input + '.*';
-    console.log('regex: ' + regex);
-    // var regex = '.*痛.*';
 
     var results = [];
-    // var results = Collection1.find({
-    //   其他: { '$regex': regex },
-    // }).fetch();
     for (var j=0; j<collections.length; j++) {
       var currentQuery = collections[j].find({
         其他: { '$regex': regex },
       }).fetch();
       results = results.concat(currentQuery);
     }
-    console.log('final results: ' + results);
 
     // 2. Display results, i.e. points with wanted sickness
     if (results.length > 0) {
@@ -77,8 +69,14 @@ Template.main.rendered = function() {
       resultObj.append("<div class='info'>Results for: \"" + input + "\"</div>");
       for (var i=0; i<results.length; i++) {
         var currentResult = results[i];
+
+        // temp fix: remove all asterisks
+        var pressurePoint = currentResult.穴位.replace(/\*/, '');
+
         var string = "<div class='list-result'>" +
-                     "<a class='list-title'>" + currentResult.穴位 + "</a>" +
+                     // "<a class='list-title'>" + currentResult.穴位 + "</a>" +
+                     "<a class='list-title'>" + pressurePoint + "</a>" +
+                     "<div class='list-meridian'>" + currentResult.經絡 + "</div>" +
                      "<div class='list-description'>" + currentResult.其他 + "</div>" +
                      "</div>";
         resultObj.append(string);

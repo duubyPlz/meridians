@@ -41,6 +41,24 @@ if (Meteor.isServer) {
     '20' : Collection20,
   }
 
+  var numberToMeridian = {
+    '1' : '手太陰肺經',
+    '2' : '手陽明大腸經',
+    '3' : '手厥陰心包經',
+    '4' : '手少陽三焦經',
+    '5' : '手少陰心經',
+    '6' : '手太陽小腸經',
+    '7' : '足太陰脾經',
+    '8' : '足陽明胃經',
+    '10' : '足厥陰肝經',
+    '11' : '足少陽膽經a',
+    '12' : '足少陽膽經b',
+    '13' : '足少陰腎經',
+    '14' : '足太陽膀胱經',
+    '18' : '督脈',
+    '20' : '任脈',
+  }
+
   // https://coderwall.com/p/kvzbpa/don-t-use-array-foreach-use-for-instead
   for (var i=0; i<fileNames.length; i++) {
     var currentName = fileNames[i];
@@ -80,17 +98,21 @@ if (Meteor.isServer) {
     // column titles
     var names = data[0];
 
-    // contents
+    // current collection's meridian name
+    var meridianName = numberToMeridian[fileNumber];
+
+    // contents, for each line
     for (var i=1; i<data.length; i++) {
       var line = data[i];
       console.log("line: " + line);
 
-      // for each title column, insert the row values
+      // insert name-values, for each title column
       // `line` and `names` should be the same length
       var hash = {};
       for (var j=0; j<line.length; j++) {
         hash[names[j]] = line[j];
       }
+      hash['經絡'] = meridianName; // insert this in every entry
       console.log('hash: \n');
       console.log(hash);
 
