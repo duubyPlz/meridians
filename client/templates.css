@@ -101,3 +101,12 @@ input#searchbox:focus {
   padding-top: 10px;
   font-size: 105%;
 }
+
+footer {
+  text-align: center;
+  color: #999;
+  /*color: #777;*/
+  font-size: 75%;
+  position: relative;
+  padding: 50px;
+}

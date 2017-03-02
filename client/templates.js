@@ -40,6 +40,7 @@ Template.main.rendered = function() {
   function search(inputRaw) {
     $('#buffer').slideUp();
     $('#results-module').show();
+    $('footer').show();
 
     // 0. Sanitise input [TODO revise blacklist]
     var input = inputRaw.replace('[;\ ,./');
@@ -48,6 +49,15 @@ Template.main.rendered = function() {
     }
 
     // > nontrivial search, continue.
+    var isSuccessSickness = searchSickness(input);
+    if (!isSuccessSickness) {
+      var isSuccessPoints = searchPoints(input);
+    }
+  }
+
+  function searchSickness(input) {
+    var returnValue = false;
+
     // 1. Looking at all collections for match in 其他
     var regex = '.*' + input + '.*';
 
@@ -61,6 +71,7 @@ Template.main.rendered = function() {
 
     // 2. Display results, i.e. points with wanted sickness
     if (results.length > 0) {
+      returnValue = true;
       var resultObj = $('#results-module');
       // clear module first
       resultObj.html('');
@@ -81,8 +92,14 @@ Template.main.rendered = function() {
                      "</div>";
         resultObj.append(string);
       }
-    } else {
-      $('#results-module').html('No sickness results for: "' + input + '"');
     }
+
+    return returnValue;
+  }
+
+  function searchPoints(input) {
+    $('#results-module').html('Searching points for: "' + input + '"...');
   }
 }
+
+      // $('#results-module').html('No sickness results for: "' + input + '"');
