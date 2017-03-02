@@ -10,6 +10,7 @@ Features:
     * display all meridian tables
     * on/off toggle to show/hide list descriptions
     * bold query string in descriptions
+   (* maybe way to reverse back to home)
 
 Collection names:
      1.csv - 手太陰肺經
