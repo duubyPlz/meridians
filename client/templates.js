@@ -24,6 +24,7 @@ Template.main.rendered = function() {
   $('#searchbutton').on('click', function() {
     var input = $('#searchbox').val();
     if (input != "") {
+      $('footer').hide();
       search(input);
     }
   });
@@ -32,6 +33,7 @@ Template.main.rendered = function() {
       e.preventDefault();
       var input = $(this).val();
       if (input != "") {
+        $('footer').hide();
         search(input);
       }
     }
@@ -40,7 +42,6 @@ Template.main.rendered = function() {
   function search(inputRaw) {
     $('#buffer').slideUp();
     $('#results-module').show();
-    $('footer').show();
 
     // 0. Sanitise input [TODO revise blacklist]
     var input = inputRaw.replace('[;\ ,./');
@@ -49,29 +50,21 @@ Template.main.rendered = function() {
     }
 
     // > nontrivial search, continue.
-    var isSuccessSickness = searchSickness(input);
-    if (!isSuccessSickness) {
-      var isSuccessPoints = searchPoints(input);
-    }
-  }
-
-  function searchSickness(input) {
-    var returnValue = false;
-
-    // 1. Looking at all collections for match in 其他
+    // 1. Looking at all collections
     var regex = '.*' + input + '.*';
 
     var results = [];
     for (var j=0; j<collections.length; j++) {
-      var currentQuery = collections[j].find({
-        其他: { '$regex': regex },
-      }).fetch();
+      var currentQuery = collections[j].find({ $or: [{
+        其他: { '$regex': regex }, // sickness
+      }, {
+        穴位: { '$regex': regex }, // points
+      }]}).fetch();
       results = results.concat(currentQuery);
     }
 
     // 2. Display results, i.e. points with wanted sickness
     if (results.length > 0) {
-      returnValue = true;
       var resultObj = $('#results-module');
       // clear module first
       resultObj.html('');
@@ -91,15 +84,10 @@ Template.main.rendered = function() {
                      "<div class='list-description'>" + currentResult.其他 + "</div>" +
                      "</div>";
         resultObj.append(string);
+        $('footer').show();
       }
+    } else {
+      $('#results-module').html('No results for: "' + input + '"');
     }
-
-    return returnValue;
-  }
-
-  function searchPoints(input) {
-    $('#results-module').html('Searching points for: "' + input + '"...');
   }
 }
-
-      // $('#results-module').html('No sickness results for: "' + input + '"');
