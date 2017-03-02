@@ -7,6 +7,12 @@ body {
   font-size: 16px;
 }
 
+#title {
+  font-weight: 300;
+  margin-left: 30px;
+  color: #999;
+}
+
 #buffer {
   height: 30vh;
 }
