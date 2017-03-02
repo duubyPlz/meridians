@@ -110,3 +110,31 @@ footer {
   position: relative;
   padding: 50px;
 }
+
+@media screen and (max-device-width: 768px)
+              and (orientation: portrait) {
+  #search-module {
+    width: 250px;
+  }
+
+  #results-module {
+    width: 400px;
+    padding: 15px;
+  }
+
+  footer {
+    width: 400px;
+  }
+}
+
+@media screen and (max-device-width: 768px)
+              and (orientation: landscape) {
+  #search-module {
+    width: 400px;
+  }
+
+  #results-module {
+    width: 650px;
+    padding: 15px;
+  }
+}
