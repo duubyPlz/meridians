@@ -46,7 +46,6 @@ Template.main.rendered = function() {
     var input = $(this).text();
 
     // search this text
-    $('#searchbox').val(input); // change textbox value
     if (input != "") {
       $('footer').hide();
       search(input);
@@ -58,13 +57,21 @@ Template.main.rendered = function() {
     $('#results-module').show();
 
     // 0. Sanitise input [TODO revise blacklist]
-    var input = inputRaw.replace('[;\ ,./');
+    var input = inputRaw.replace(/[\[\];\ ,.\*\\]/, '');
+    console.log(input);
     if (input == "") {
       return;
     }
 
+    // 1. replace search box with search term
+    $('#searchbox').val(input); // change textbox value
+
     // > nontrivial search, continue.
-    // 1. Looking at all collections
+    // 2. Looking at all collections
+    if (input.match(/[\(\)]/g)) {
+      input = input.replace(new RegExp('([\(\)])', 'g'), '\\$1');
+    }
+
     var regex = '.*' + input + '.*';
 
     var results = [];
@@ -77,7 +84,7 @@ Template.main.rendered = function() {
       results = results.concat(currentQuery);
     }
 
-    // 2. Display results, i.e. points with wanted sickness
+    // 3. Display results, i.e. points with wanted sickness
     if (results.length > 0) {
       var resultObj = $('#results-module');
       // clear module first
@@ -92,7 +99,7 @@ Template.main.rendered = function() {
         var pressurePoint = currentResult.穴位.replace(/\*/, '');
 
         // split description into pieces
-        var descriptionTitleList = currentResult.其他.split(': ');
+        var descriptionTitleList = currentResult.其他.split(/: |：/);
         var descriptionList = [];
         if (descriptionTitleList.length > 1) {
           descriptionList = descriptionTitleList[1].split(/、|，/);
@@ -110,8 +117,17 @@ Template.main.rendered = function() {
           string = string + "<a class='list-title search-term'>" + pressurePoint + "</a>";
         }
 
-        string = string + "<div class='list-meridian'>" + currentResult.經絡 + "</div>" + 
-                          "<div class='list-description'><a class='search-term'>" + descriptionTitleList[0] + "</a>: ";
+        if (currentResult.經絡.match(new RegExp(regex, 'g'))) {
+          string = string + "<div class='list-meridian'><b>" + currentResult.經絡 + "</b></div>";
+        } else {
+          string = string + "<div class='list-meridian'>" + currentResult.經絡 + "</div>";
+        }
+
+        if (descriptionTitleList[0].match(new RegExp(regex, 'g'))) {
+          string = string + "<div class='list-description'><a class='search-term'><b>" + descriptionTitleList[0] + "</b></a>: ";
+        } else {
+          string = string + "<div class='list-description'><a class='search-term'>" + descriptionTitleList[0] + "</a>: ";
+        }
 
         // add description
         for (var k=0; k<descriptionList.length; k++) {
