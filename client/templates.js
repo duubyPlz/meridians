@@ -101,11 +101,17 @@ Template.main.rendered = function() {
           descriptionList = currentResult.其他.split(/、|，/);
         }
 
-        var string = "<div class='list-result'>" +
-                     // "<a class='list-title'>" + currentResult.穴位 + "</a>" +
-                     "<a class='list-title search-term'>" + pressurePoint + "</a>" +
-                     "<div class='list-meridian'>" + currentResult.經絡 + "</div>" + 
-                     "<div class='list-description'><a class='search-term'>" + descriptionTitleList[0] + "</a>: ";
+        var regex = '.*' + input + '.*';
+        var string = "<div class='list-result'>";
+
+        if (pressurePoint.match(new RegExp(regex, 'g'))) {
+          string = string + "<a class='list-title search-term'><b>" + pressurePoint + "</b></a>";
+        } else {
+          string = string + "<a class='list-title search-term'>" + pressurePoint + "</a>";
+        }
+
+        string = string + "<div class='list-meridian'>" + currentResult.經絡 + "</div>" + 
+                          "<div class='list-description'><a class='search-term'>" + descriptionTitleList[0] + "</a>: ";
 
         // add description
         for (var k=0; k<descriptionList.length; k++) {
@@ -115,8 +121,6 @@ Template.main.rendered = function() {
           }
           if (k == 0) {
             string = string + "<a class='search-term'>";
-            var regex = '.*' + input + '.*';
-            // [CONTINUE HERE]
             if (currentElem.match(new RegExp(regex, 'g'))) {
               string = string + "<b>" + currentElem + "</b></a>";
             } else {
