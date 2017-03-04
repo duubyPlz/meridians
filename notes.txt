@@ -12,8 +12,6 @@ Features:
     [x] bold query string in descriptions
    ([ ] maybe way to reverse back to home)
     [ ] edit page
-    [x] make every sickness a link (delimit '、' & ': ')
-        [ ] fix 清熱明目、調理腸胃 titles (slice() everything except last element, join() on delimiter)
 
 Collection names:
      1.csv - 手太陰肺經
@@ -36,3 +34,7 @@ TODO:
     [x] change ui titles to chinese
     [x] why do some 穴位's have asterisks? regex problem...
     [x] in addition to description, add which meridian (collection name)
+    [x] make every sickness a link (delimit '、' & ': ')
+        [ ] fix 清熱明目、調理腸胃 titles (slice() everything except last element, join() on delimiter)
+    [ ] bold term before colon
+    [ ] keyword to show everything..
