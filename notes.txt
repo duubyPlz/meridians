@@ -5,14 +5,15 @@ Search for:                        Returns:
     4. sickness class; e.g. "血症"      => [rows] pressure points with search term as "true"
 
 Features:
-    [ ] each result term should be a link, clicking on it will search for it instead
-        [ ] [lists] will be like google results (add descriptions)
+    [x] each result term should be a link, clicking on it will search for it instead
+        [x] [lists] will be like google results (add descriptions)
     [ ] display all meridian tables
     [ ] on/off toggle to show/hide list descriptions
     [ ] bold query string in descriptions
    ([ ] maybe way to reverse back to home)
     [ ] search history
     [ ] edit page
+    [ ] make every sickness a link (delimit '、' & ': ')
 
 Collection names:
      1.csv - 手太陰肺經

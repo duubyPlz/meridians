@@ -21,6 +21,7 @@ Template.main.rendered = function() {
     Collection20,
   ];
 
+  // search triggered
   $('#searchbutton').on('click', function() {
     var input = $('#searchbox').val();
     if (input != "") {
@@ -28,6 +29,7 @@ Template.main.rendered = function() {
       search(input);
     }
   });
+
   $('#searchbox').keydown(function (e) {
     if (e.keyCode == 13)  {
       e.preventDefault();
@@ -36,6 +38,19 @@ Template.main.rendered = function() {
         $('footer').hide();
         search(input);
       }
+    }
+  });
+
+  // link triggered
+  $('body').on('click', '#results-module .search-term', function() {
+    var input = $(this).text();
+    console.log("LINK: " + input);
+
+    // search this text
+    $('#searchbox').val(input); // change textbox value
+    if (input != "") {
+      $('footer').hide();
+      search(input);
     }
   });
 
@@ -54,8 +69,8 @@ Template.main.rendered = function() {
     var regex = '.*' + input + '.*';
 
     var results = [];
-    for (var j=0; j<collections.length; j++) {
-      var currentQuery = collections[j].find({ $or: [{
+    for (var i=0; i<collections.length; i++) {
+      var currentQuery = collections[i].find({ $or: [{
         其他: { '$regex': regex }, // sickness
       }, {
         穴位: { '$regex': regex }, // points
@@ -71,18 +86,42 @@ Template.main.rendered = function() {
 
       // then display new results
       resultObj.append("<div class='info'>Results for: \"" + input + "\"</div>");
-      for (var i=0; i<results.length; i++) {
-        var currentResult = results[i];
+      for (var j=0; j<results.length; j++) {
+        var currentResult = results[j];
 
         // temp fix: remove all asterisks
         var pressurePoint = currentResult.穴位.replace(/\*/, '');
 
+        // split description into pieces
+        var descriptionTitleList = currentResult.其他.split(': ');
+        var descriptionList = [];
+        if (descriptionTitleList.length > 1) {
+          descriptionList = descriptionTitleList[1].split(/、|，/);
+        } else {
+          // TODO fix
+          descriptionList = currentResult.其他.split(/、|，/);
+        }
+        console.log(descriptionList);
+
+
         var string = "<div class='list-result'>" +
                      // "<a class='list-title'>" + currentResult.穴位 + "</a>" +
-                     "<a class='list-title'>" + pressurePoint + "</a>" +
-                     "<div class='list-meridian'>" + currentResult.經絡 + "</div>" +
-                     "<div class='list-description'>" + currentResult.其他 + "</div>" +
-                     "</div>";
+                     "<a class='list-title search-term'>" + pressurePoint + "</a>" +
+                     "<div class='list-meridian'>" + currentResult.經絡 + "</div>" + 
+                     "<div class='list-description'><a class='search-term'>" + descriptionTitleList[0] + "</a>: ";
+
+        // add description
+        for (var k=0; k<descriptionList.length; k++) {
+          if (descriptionList[k] == "") {
+            continue;
+          }
+          if (k == 0) {
+            string = string + "<a class='search-term'>" + descriptionList[k] + "</a>";
+          } else {
+            string = string + ", <a class='search-term'>" + descriptionList[k] + "</a>";
+          }
+        }
+        string = string + "</div>" + "</div>";
         resultObj.append(string);
         $('footer').show();
       }

@@ -89,6 +89,9 @@ input#searchbox:focus {
 .list-title:hover,
 .list-title:focus {
   color: #d43d21;
+}
+
+.search-term {
   cursor: pointer;
 }
 
