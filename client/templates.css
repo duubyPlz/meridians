@@ -82,7 +82,7 @@ input#searchbox:focus {
 }
 
 .list-title {
-  font-size: 125%;
+  font-size: 130%;
   color: #d43d21;
 }
 
@@ -121,12 +121,12 @@ footer {
   }
 
   #results-module {
-    width: 400px;
+    width: 350px;
     padding: 15px;
   }
 
   footer {
-    width: 400px;
+    width: 350px;
   }
 }
 

@@ -38,3 +38,4 @@ TODO:
         [ ] fix 清熱明目、調理腸胃 titles (slice() everything except last element, join() on delimiter)
     [ ] bold term before colon
     [ ] keyword to show everything..
+    [ ] semicolon delimiter somewhere...

@@ -99,7 +99,7 @@ Template.main.rendered = function() {
         var pressurePoint = currentResult.穴位.replace(/\*/, '');
 
         // split description into pieces
-        var descriptionTitleList = currentResult.其他.split(/: |：/);
+        var descriptionTitleList = currentResult.其他.split(/: |：|;/);
         var descriptionList = [];
         if (descriptionTitleList.length > 1) {
           descriptionList = descriptionTitleList[1].split(/、|，/);
