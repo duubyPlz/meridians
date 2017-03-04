@@ -13,7 +13,8 @@ Features:
    ([ ] maybe way to reverse back to home)
     [ ] search history
     [ ] edit page
-    [ ] make every sickness a link (delimit '、' & ': ')
+    [x] make every sickness a link (delimit '、' & ': ')
+        [ ] fix 清熱明目、調理腸胃 titles (slice() everything except last element, join() on delimiter)
 
 Collection names:
      1.csv - 手太陰肺經

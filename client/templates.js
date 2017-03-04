@@ -44,7 +44,6 @@ Template.main.rendered = function() {
   // link triggered
   $('body').on('click', '#results-module .search-term', function() {
     var input = $(this).text();
-    console.log("LINK: " + input);
 
     // search this text
     $('#searchbox').val(input); // change textbox value
@@ -101,8 +100,6 @@ Template.main.rendered = function() {
           // TODO fix
           descriptionList = currentResult.其他.split(/、|，/);
         }
-        console.log(descriptionList);
-
 
         var string = "<div class='list-result'>" +
                      // "<a class='list-title'>" + currentResult.穴位 + "</a>" +
@@ -112,13 +109,21 @@ Template.main.rendered = function() {
 
         // add description
         for (var k=0; k<descriptionList.length; k++) {
-          if (descriptionList[k] == "") {
+          var currentElem = descriptionList[k];
+          if (currentElem == "") {
             continue;
           }
           if (k == 0) {
-            string = string + "<a class='search-term'>" + descriptionList[k] + "</a>";
+            string = string + "<a class='search-term'>";
+            var regex = '.*' + input + '.*';
+            // [CONTINUE HERE]
+            if (currentElem.match(new RegExp(regex, 'g'))) {
+              string = string + "<b>" + currentElem + "</b></a>";
+            } else {
+              string = string + currentElem + "</a>";
+            }
           } else {
-            string = string + ", <a class='search-term'>" + descriptionList[k] + "</a>";
+            string = string + "、<a class='search-term'>" + currentElem + "</a>";
           }
         }
         string = string + "</div>" + "</div>";
