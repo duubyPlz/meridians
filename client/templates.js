@@ -123,7 +123,11 @@ Template.main.rendered = function() {
               string = string + currentElem + "</a>";
             }
           } else {
-            string = string + "、<a class='search-term'>" + currentElem + "</a>";
+            if (currentElem.match(new RegExp(regex, 'g'))) {
+              string = string + "、<a class='search-term'><b>" + currentElem + "</b></a>";
+            } else {
+              string = string + "、<a class='search-term'>" + currentElem + "</a>";
+            }
           }
         }
         string = string + "</div>" + "</div>";
