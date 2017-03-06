@@ -30,6 +30,22 @@ Collection names:
     18.csv - 督脈
     20.csv - 任脈
 
+Sickness classes:
+    0. 痛症 - red
+    1. 炎症 - purple
+    2. 痺症/攣痺 - cyan
+    3. 血病/血症 - blue
+    4. 氣管病 - yellow
+    5. 熱病/熱症 - brown
+    6. 情志 - navy
+    7. 耳症 - maroon
+    8. 眼症 - black
+    9. 鼻病 - dark purple (purple)
+   10. 男女科 - green (blue)
+   11. 排泄 - orange (brown)
+   12. other (shouldnt exist by the end) - default (grey)
+
+
 TODO:
     [x] change ui titles to chinese
     [x] why do some 穴位's have asterisks? regex problem...
@@ -37,5 +53,6 @@ TODO:
     [x] make every sickness a link (delimit '、' & ': ')
         [ ] fix 清熱明目、調理腸胃 titles (slice() everything except last element, join() on delimiter)
     [ ] bold term before colon
-    [ ] keyword to show everything..
+    [ ] keyword to display all
     [ ] semicolon delimiter somewhere...
+    [ ] better search & bold regex: split input on each character, then OR them

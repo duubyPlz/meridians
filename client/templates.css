@@ -105,6 +105,19 @@ input#searchbox:focus {
   font-size: 105%;
 }
 
+.sickness-classes {
+  padding-top: 5px;
+  float: right;
+}
+
+.label {
+  font-weight: 300;
+  font-size: 80%;
+  padding: .15em .45em .25em .45em;
+}
+
+
+
 footer {
   text-align: center;
   color: #999;

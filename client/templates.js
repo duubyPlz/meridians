@@ -88,10 +88,10 @@ Template.main.rendered = function() {
     if (results.length > 0) {
       var resultObj = $('#results-module');
       // clear module first
-      resultObj.html('');
+      // resultObj.html('');
 
       // then display new results
-      resultObj.append("<div class='info'>Results for: \"" + input + "\"</div>");
+      // resultObj.append("<div class='info'>Results for: \"" + input + "\"</div>");
       for (var j=0; j<results.length; j++) {
         var currentResult = results[j];
 
@@ -99,7 +99,7 @@ Template.main.rendered = function() {
         var pressurePoint = currentResult.穴位.replace(/\*/, '');
 
         // split description into pieces
-        var descriptionTitleList = currentResult.其他.split(/: |：|;/);
+        var descriptionTitleList = currentResult.其他.split(/: |：|;|:/);
         var descriptionList = [];
         if (descriptionTitleList.length > 1) {
           descriptionList = descriptionTitleList[1].split(/、|，/);
@@ -151,7 +151,7 @@ Template.main.rendered = function() {
           }
         }
         string = string + "</div>" + "</div>";
-        resultObj.append(string);
+        // resultObj.append(string);
         $('footer').show();
       }
     } else {
