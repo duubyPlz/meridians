@@ -7,6 +7,11 @@ body {
   font-size: 16px;
 }
 
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
 #title {
   font-weight: 300;
   margin-left: 30px;
@@ -78,17 +83,16 @@ input#searchbox:focus {
 
 .list-result {
   padding-top: 15px;
-  padding-bottom: 15px;
 }
 
 .list-title {
   font-size: 130%;
-  color: #d43d21;
+  color: rgb(212, 61, 33);
 }
 
 .list-title:hover,
 .list-title:focus {
-  color: #d43d21;
+  color: rgb(182, 31, 3);
 }
 
 .search-term {
@@ -107,15 +111,64 @@ input#searchbox:focus {
 
 .sickness-classes {
   padding-top: 5px;
-  float: right;
+  padding-bottom: 15px;
 }
 
 .label {
   font-weight: 300;
   font-size: 80%;
   padding: .15em .45em .25em .45em;
+  /*margin: 0 .45em 0 .45em;*/
+  margin-right: 5px;
 }
 
+.label-red {
+  background-color: rgb(240, 0, 0);
+}
+
+.label-purple {
+  background-color: ;
+}
+
+.label-cyan {
+  background-color: ;
+}
+
+.label-blue {
+  background-color: ;
+}
+
+.label-yellow {
+  background-color: ;
+}
+
+.label-brown {
+  background-color: ;
+}
+
+.label-navy {
+  background-color: ;
+}
+
+.label-maroon {
+  background-color: ;
+}
+
+.label-black {
+  background-color: ;
+}
+
+.label-dark-purple {
+  background-color: ;
+}
+
+.label-green {
+  background-color: ;
+}
+
+.label-orange {
+  background-color: ;
+}
 
 
 footer {

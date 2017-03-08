@@ -88,10 +88,10 @@ Template.main.rendered = function() {
     if (results.length > 0) {
       var resultObj = $('#results-module');
       // clear module first
-      // resultObj.html('');
+      resultObj.html('');
 
       // then display new results
-      // resultObj.append("<div class='info'>Results for: \"" + input + "\"</div>");
+      resultObj.append("<div class='info'>Results for: \"" + input + "\"</div>");
       for (var j=0; j<results.length; j++) {
         var currentResult = results[j];
 
@@ -151,7 +151,43 @@ Template.main.rendered = function() {
           }
         }
         string = string + "</div>" + "</div>";
-        // resultObj.append(string);
+
+        // add tags
+        string = string + '<div class="sickness-classes">';
+        // > for everything in currentResult, add if value is `1`
+        var tags = [];
+        $.each(currentResult, function (name, value) {
+          if ((value == 1) && (name != '#')) {
+            tags.push(name);
+          }
+        });
+
+        // > colour & append tags
+        var tagColours = {
+         "痛症": "red",
+         "炎症": "purple",
+         "痺症": "cyan",
+         "攣痺": "cyan",
+         "血病": "blue",
+         "血症": "blue",
+         "氣管病": "yellow",
+         "熱病": "brown",
+         "熱症": "brown",
+         "情志": "navy",
+         "耳症": "maroon",
+         "眼症": "black",
+         "鼻病": "dark-purple",
+         "男女科": "green",
+         "排泄": "orange",
+         "others": "default";
+        }
+        for (var l=0; l<tags.length; l++) {
+          string = string + '<span class="label label-primary search-term">' + tags[l] + '</span>';
+        }
+        string = string + '</div>';
+
+        // finished
+        resultObj.append(string);
         $('footer').show();
       }
     } else {
