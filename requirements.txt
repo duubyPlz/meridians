@@ -1,0 +1,10 @@
+* year name phone address gender - can choose ()
+    * remarks (sickness - type yourself then can choose, other details don't need to choose)
+* form can see details
+* add edit
+* id number auto - location (cities, code can add in front of id)
+* a whole family - relationship field
+* session history - diabetes - 
+
+* login
+    * patient and/or student, learning details

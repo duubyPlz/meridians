@@ -82,6 +82,11 @@ Template.main.rendered = function() {
         穴位: { '$regex': regex }, // points
       }]}).fetch();
       results = results.concat(currentQuery);
+
+      // types
+      var currentQuery2 = collections[i].find({ input: { $exists: true, $ne: null } }).fetch();
+      console.log(currentQuery2);
+      // results = results.concat(currentQuery2);
     }
 
     // 3. Display results, i.e. points with wanted sickness
@@ -158,7 +163,11 @@ Template.main.rendered = function() {
         var tags = [];
         $.each(currentResult, function (name, value) {
           if ((value == 1) && (name != '#')) {
-            tags.push(name);
+            if (name != 'undefined'){
+              tags.push(name);
+            } else {
+              tags.push('default');
+            }
           }
         });
 
@@ -179,10 +188,11 @@ Template.main.rendered = function() {
          "鼻病": "dark-purple",
          "男女科": "green",
          "排泄": "orange",
-         "others": "default";
+         "others": "default",
         }
         for (var l=0; l<tags.length; l++) {
-          string = string + '<span class="label label-primary search-term">' + tags[l] + '</span>';
+          var color = tagColours[tags[l]];
+          string = string + '<span class="label label-' + color + ' search-term">' + tags[l] + '</span>';
         }
         string = string + '</div>';
 
