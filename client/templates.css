@@ -79,6 +79,12 @@ input#searchbox:focus {
   padding-top: 10px;
 }
 
+#history-module {
+  width: 1000px;
+  text-align: center;
+  padding-top: 10px;
+}
+
 #results-module {
   width: 1000px;
   margin: auto;

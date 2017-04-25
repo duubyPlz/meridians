@@ -80,6 +80,7 @@ Template.main.rendered = function() {
     // 0.5. Put search string into history
     setTimeout(function() {
       history.push(input);
+      generateHistory();
     }, 50);
 
     // 1. replace search box with search term
