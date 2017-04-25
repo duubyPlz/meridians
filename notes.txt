@@ -58,5 +58,6 @@ TODO:
     [ ] better search & bold regex: split input on each character, then OR them
     [ ] history
         [x] basic string
+        [ ] if searchstring same then don't add to history
         [ ] breadcrumbs
         [ ] with forward/back buttons
