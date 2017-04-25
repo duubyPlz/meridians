@@ -21,6 +21,8 @@ Template.main.rendered = function() {
     Collection20,
   ];
 
+  var history = [];
+
   // search triggered
   $('#searchbutton').on('click', function() {
     var input = $('#searchbox').val();
@@ -50,6 +52,11 @@ Template.main.rendered = function() {
       $('footer').hide();
       search(input);
     }
+  });
+
+  // toggle history
+  $('#history-button').on('click', function () {
+    $('#history-module').toggle();
   });
 
   function search(inputRaw) {

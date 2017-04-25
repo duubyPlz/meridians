@@ -66,6 +66,19 @@ input#searchbox:focus {
   color: #333;
 }
 
+#container {
+  width: 500px;
+  margin: auto;
+}
+
+#history-button {
+  float: right;
+  font-size: 14px;
+  font-style: italic;
+  cursor: pointer;
+  padding-top: 10px;
+}
+
 #results-module {
   width: 1000px;
   margin: auto;
