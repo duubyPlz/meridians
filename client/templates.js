@@ -159,19 +159,8 @@ Template.main.rendered = function() {
 
         // add tags
         string = string + '<div class="sickness-classes">';
-        // > for everything in currentResult, add if value is `1`
-        var tags = [];
-        $.each(currentResult, function (name, value) {
-          if ((value == 1) && (name != '#')) {
-            if (name != 'undefined'){
-              tags.push(name);
-            } else {
-              tags.push('default');
-            }
-          }
-        });
 
-        // > colour & append tags
+        var tags = [];
         var tagColours = {
          "痛症": "red",
          "炎症": "purple",
@@ -190,9 +179,23 @@ Template.main.rendered = function() {
          "排泄": "orange",
          "others": "default",
         }
+
+        // > for everything in currentResult, add if value is `1`
+        $.each(currentResult, function (name, value) {
+          if ((value == 1) && (name != '#')) {
+            tags.push(name);
+          }
+        });
+
+        // > colour & append tags
         for (var l=0; l<tags.length; l++) {
           var color = tagColours[tags[l]];
-          string = string + '<span class="label label-' + color + ' search-term">' + tags[l] + '</span>';
+          if (color != undefined) {
+            string = string + '<span class="label label-' + color + ' search-term">' + tags[l] + '</span>';
+          } else {
+            // default colour
+            string = string + '<span class="label label-default search-term">' + tags[l] + '</span>';
+          }
         }
         string = string + '</div>';
 
