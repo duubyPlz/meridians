@@ -56,3 +56,7 @@ TODO:
     [ ] keyword to display all
     [ ] semicolon delimiter somewhere...
     [ ] better search & bold regex: split input on each character, then OR them
+    [ ] history
+        [x] basic string
+        [ ] breadcrumbs
+        [ ] with forward/back buttons
