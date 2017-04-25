@@ -58,7 +58,7 @@ Template.main.rendered = function() {
 
     // 0. Sanitise input [TODO revise blacklist]
     var input = inputRaw.replace(/[\[\];\ ,.\*\\]/, '');
-    console.log(input);
+    console.log('query: ' + input);
     if (input == "") {
       return;
     }
@@ -84,9 +84,11 @@ Template.main.rendered = function() {
       results = results.concat(currentQuery);
 
       // types
-      var currentQuery2 = collections[i].find({ input: { $exists: true, $ne: null } }).fetch();
-      console.log(currentQuery2);
-      // results = results.concat(currentQuery2);
+      collections[i].find().forEach(function(entry) {
+        if (entry.hasOwnProperty(input) && entry[input] == 1) {
+          results = results.concat(entry);
+        }
+      });
     }
 
     // 3. Display results, i.e. points with wanted sickness
