@@ -57,7 +57,14 @@ Template.main.rendered = function() {
   // toggle history
   $('#history-button').on('click', function () {
     $('#history-module').toggle();
+    if ($('#history-module').is(':visible')) {
+      generateHistory();
+    }
   });
+
+  function generateHistory() {
+    $('#history-module').html(history.toString());
+  }
 
   function search(inputRaw) {
     $('#buffer').slideUp();
@@ -69,6 +76,11 @@ Template.main.rendered = function() {
     if (input == "") {
       return;
     }
+
+    // 0.5. Put search string into history
+    setTimeout(function() {
+      history.push(input);
+    }, 50);
 
     // 1. replace search box with search term
     $('#searchbox').val(input); // change textbox value
