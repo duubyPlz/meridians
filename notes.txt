@@ -1,3 +1,25 @@
+TODO:
+    [x] change ui titles to chinese
+    [x] why do some 穴位's have asterisks? regex problem...
+    [x] in addition to description, add which meridian (collection name)
+    [x] make every sickness a link (delimit '、' & ': ')
+        [ ] fix 清熱明目、調理腸胃 titles (slice() everything except last element, join() on delimiter)
+    [ ] bold term before colon
+    [ ] keyword to display all
+    [ ] semicolon delimiter somewhere...
+    [ ] better search & bold regex: split input on each character, then OR them
+    [ ] history
+        [x] basic string
+        [ ] if searchstring same then don't add to history
+        [ ] breadcrumbs
+        [ ] with forward/back buttons
+
+BUGS:
+    [ ] 會陰
+        任脈
+        1: 1
+
+EPICS:
 Search for:                        Returns:
     [x] sickness; e.g. "咳喘"            => [list] pressure points; e.g. "中府"
     [x] pressure point                   => [list] sicknesses
@@ -7,11 +29,13 @@ Search for:                        Returns:
 Features:
     [x] each result term should be a link, clicking on it will search for it instead
         [x] [lists] will be like google results (add descriptions)
-    [ ] display all meridian tables
-    [ ] on/off toggle to show/hide list descriptions
     [x] bold query string in descriptions
-   ([ ] maybe way to reverse back to home)
+    [ ] display all meridian tables
     [ ] edit page
+
+Maybe:
+   ([ ] on/off toggle to show/hide list descriptions)
+   ([ ] maybe way to reverse back to home)
 
 Collection names:
      1.csv - 手太陰肺經
@@ -44,20 +68,3 @@ Sickness classes:
    10. 男女科 - green (blue)
    11. 排泄 - orange (brown)
    12. other (shouldnt exist by the end) - default (grey)
-
-
-TODO:
-    [x] change ui titles to chinese
-    [x] why do some 穴位's have asterisks? regex problem...
-    [x] in addition to description, add which meridian (collection name)
-    [x] make every sickness a link (delimit '、' & ': ')
-        [ ] fix 清熱明目、調理腸胃 titles (slice() everything except last element, join() on delimiter)
-    [ ] bold term before colon
-    [ ] keyword to display all
-    [ ] semicolon delimiter somewhere...
-    [ ] better search & bold regex: split input on each character, then OR them
-    [ ] history
-        [x] basic string
-        [ ] if searchstring same then don't add to history
-        [ ] breadcrumbs
-        [ ] with forward/back buttons
