@@ -1,6 +1,8 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, dialog} = require('electron')
+const fs = require('fs');
 const path = require('path')
+const ipc = require('electron').ipcMain
 
 function createWindow () {
   // Create the browser window.
@@ -8,7 +10,8 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true
     }
   })
 
@@ -16,14 +19,14 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
-  createWindow()
+  createWindow();
   
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
@@ -41,3 +44,22 @@ app.on('window-all-closed', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+ipc.on('asdf-button-clicked', (event, arg) => {
+  console.log(event);
+  console.log(arg);
+  console.log("ASDFASDFDSF");
+  dialog.showOpenDialog({
+    properties: ['openFile', 'multiSelections']
+  }).then((result) => {
+    console.log("ASDFASDF");
+    console.log(result);
+
+    for (const path of result.filePaths) {
+      console.log(path);
+      fs.readFile(path, 'utf-8', (err, data) => {
+        // Change how to handle the file content
+        console.log("The file content is : " + data);
+      });
+    }
+  });
+});
