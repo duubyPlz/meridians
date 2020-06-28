@@ -4,9 +4,11 @@ const fs = require('fs');
 const path = require('path')
 const ipc = require('electron').ipcMain
 
+let mainWindow;
+
 function createWindow () {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
@@ -16,7 +18,7 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('./fileOpen.html')
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
@@ -44,22 +46,12 @@ app.on('window-all-closed', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-ipc.on('asdf-button-clicked', (event, arg) => {
-  console.log(event);
-  console.log(arg);
-  console.log("ASDFASDFDSF");
+ipc.on('request-file-paths', (event, arg) => {
   dialog.showOpenDialog({
     properties: ['openFile', 'multiSelections']
   }).then((result) => {
-    console.log("ASDFASDF");
-    console.log(result);
-
-    for (const path of result.filePaths) {
-      console.log(path);
-      fs.readFile(path, 'utf-8', (err, data) => {
-        // Change how to handle the file content
-        console.log("The file content is : " + data);
-      });
+    if (result.filePaths.length > 0) {
+      event.reply('reply-file-paths', result.filePaths);
     }
   });
 });
