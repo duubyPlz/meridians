@@ -6,7 +6,6 @@
 // process.
 const ipc = require('electron').ipcRenderer;
 const fs = require('fs');
-const fa = require('font-awesome');
 
 // Constants
 const pathFile = './assets/pathFile.json';
