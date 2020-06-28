@@ -132,6 +132,19 @@ function search(inputRaw) {
 
   var results = [];
   for (var i=0; i<collections.length; i++) {
+    // 0: Collection
+    // _collection: LocalCollection {name: "collection1", _docs: _IdMap, _observeQueue: M…r._SynchronousQueue, next_qid: 1, queries: {…}, …}
+    // _connection: Connection {options: {…}, onReconnect: null, _stream: ClientStream, _lastSessionId: "LytPN3QApXQ2zHgfe", _versionSuggestion: "1", …}
+    // _driver: LocalCollectionDriver {noConnCollections: {…}}
+    // _insecure: undefined
+    // _makeNewID: ƒ ()
+    // _name: "collection1"
+    // _prefix: "/collection1/"
+    // _restricted: false
+    // _transform: null
+    // _validators: {insert: {…}, update: {…}, remove: {…}, upsert: {…}, fetch: Array(0), …}
+    // __proto__: Object
+
     // TODO continue here: convert this logic to use JSON, IMPLEMENT CSV -> JSON depending on logic
     var currentQuery = collections[i].find({ $or: [{
       其他: { '$regex': regex }, // sickness
