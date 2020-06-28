@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="font-src 'self' data:; img-src 'self' data:; default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="font-src 'self' data:; img-src 'self' data:; default-src 'self'; script-src 'self'">
+
+    <link href="./custom.css" rel="stylesheet">
+    <link rel="icon" href="./assets/icon.ico">
+    <title>經絡搜尋 | meridians search</title>
+  </head>
+  <body>
+    <h2 id='title'><i class='fa fa-heartbeat'></i> 經絡搜尋</h2>
+
+    <button id='request-file-paths'>asdfasdfsadf</button>
+
+    <div id='buffer'></div>
+    <div class="input-group" id='search-module'>
+      <input id='searchbox' type="text" class="form-control" placeholder="病徵, 穴位" autofocus />
+      <span class="input-group-btn">
+        <button id='searchbutton' class="btn btn-default" type="button"><i class='fa fa-search'></i></button>
+      </span>
+    </div><!-- /input-group -->
+    <div id='container'><a id='history-button'>toggle history</a></div>
+    <div id='history-module' style='display:none'>history</div>
+    <div id='results-module' style='display:none'></div>
+    <footer style='display:none'>— end —</footer>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./custom.js"></script>
+  </body>
+</html>

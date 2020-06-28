@@ -1,0 +1,335 @@
+/* noto-sans-tc-100 - chinese-traditional */
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 100;
+    src: url('assets/fonts/noto-sans-tc-v10-chinese-traditional-100.eot'); /* IE9 Compat Modes */
+    src: local('Noto Sans TC Thin'), local('NotoSansTC-Thin'),
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-100.woff2') format('woff2'), /* Super Modern Browsers */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-100.woff') format('woff'), /* Modern Browsers */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-100.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-100.svg#NotoSansTC') format('svg'); /* Legacy iOS */
+}
+/* noto-sans-tc-300 - chinese-traditional */
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 300;
+    src: url('assets/fonts/noto-sans-tc-v10-chinese-traditional-300.eot'); /* IE9 Compat Modes */
+    src: local('Noto Sans TC Light'), local('NotoSansTC-Light'),
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-300.woff2') format('woff2'), /* Super Modern Browsers */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-300.woff') format('woff'), /* Modern Browsers */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-300.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-300.svg#NotoSansTC') format('svg'); /* Legacy iOS */
+}
+/* noto-sans-tc-regular - chinese-traditional */
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/noto-sans-tc-v10-chinese-traditional-regular.eot'); /* IE9 Compat Modes */
+    src: local('Noto Sans TC Regular'), local('NotoSansTC-Regular'),
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-regular.woff') format('woff'), /* Modern Browsers */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-regular.svg#NotoSansTC') format('svg'); /* Legacy iOS */
+}
+/* noto-sans-tc-500 - chinese-traditional */
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    src: url('assets/fonts/noto-sans-tc-v10-chinese-traditional-500.eot'); /* IE9 Compat Modes */
+    src: local('Noto Sans TC Medium'), local('NotoSansTC-Medium'),
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-500.woff2') format('woff2'), /* Super Modern Browsers */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-500.woff') format('woff'), /* Modern Browsers */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-500.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-500.svg#NotoSansTC') format('svg'); /* Legacy iOS */
+}
+/* noto-sans-tc-700 - chinese-traditional */
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    src: url('assets/fonts/noto-sans-tc-v10-chinese-traditional-700.eot'); /* IE9 Compat Modes */
+    src: local('Noto Sans TC Bold'), local('NotoSansTC-Bold'),
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-700.woff') format('woff'), /* Modern Browsers */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-700.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-700.svg#NotoSansTC') format('svg'); /* Legacy iOS */
+}
+/* noto-sans-tc-900 - chinese-traditional */
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    src: url('assets/fonts/noto-sans-tc-v10-chinese-traditional-900.eot'); /* IE9 Compat Modes */
+    src: local('Noto Sans TC Black'), local('NotoSansTC-Black'),
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-900.woff2') format('woff2'), /* Super Modern Browsers */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-900.woff') format('woff'), /* Modern Browsers */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-900.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('assets/fonts/noto-sans-tc-v10-chinese-traditional-900.svg#NotoSansTC') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-300 - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: url('assets/fonts/roboto-v20-latin-300.eot'); /* IE9 Compat Modes */
+    src: local('Roboto Light'), local('Roboto-Light'),
+    url('assets/fonts/roboto-v20-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('assets/fonts/roboto-v20-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+    url('assets/fonts/roboto-v20-latin-300.woff') format('woff'), /* Modern Browsers */
+    url('assets/fonts/roboto-v20-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('assets/fonts/roboto-v20-latin-300.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+/* roboto-regular - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/roboto-v20-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Roboto'), local('Roboto-Regular'),
+    url('assets/fonts/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('assets/fonts/roboto-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('assets/fonts/roboto-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('assets/fonts/roboto-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('assets/fonts/roboto-v20-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+body {
+    font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.hide {
+    display: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+#title {
+    font-weight: 300;
+    margin-left: 30px;
+    color: #999;
+}
+
+#buffer {
+    height: 30vh;
+}
+
+#search-module {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+input#searchbox {
+    height: 45px;
+    font-weight: 300;
+    font-size: 18px;
+    border: 2px solid #ccc;
+}
+
+input#searchbox::-webkit-input-placeholder {
+    font-weight: 300;
+}
+
+input#searchbox:focus {
+    outline: none;
+    /*box-shadow: 0 0 20px #92e2ff;*/
+    box-shadow: none;
+    border: 2px solid #1caff6;
+}
+
+#searchbutton {
+    height: 45px;
+    border: 2px solid #ccc;
+    border-left: none;
+    box-shadow: none;
+    position: relative;
+    left: 1px;
+    font-weight: 300;
+    font-size: 16px;
+    color: #999;
+}
+
+#searchbutton:hover,
+#searchbutton:focus {
+    outline: none;
+    background-color: white;
+    color: #333;
+}
+
+#container {
+    width: 500px;
+    margin: auto;
+}
+
+#history-button {
+    float: right;
+    font-size: 14px;
+    font-style: italic;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#history-module {
+    padding: 0px 100px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#results-module {
+    padding: 0px 100px;
+    margin: auto;
+    position: relative;
+    top: 20px;
+    margin-bottom: 50px;
+}
+
+.info {
+    color: #999;
+    font-size: 90%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.list-result {
+    padding-top: 15px;
+}
+
+.list-title {
+    font-size: 130%;
+    color: rgb(212, 61, 33);
+}
+
+.list-title:hover,
+.list-title:focus {
+    color: rgb(182, 31, 3);
+}
+
+.search-term {
+    cursor: pointer;
+}
+
+.list-meridian {
+    font-size: 90%;
+    color: #333;
+}
+
+.list-description {
+    padding-top: 10px;
+    font-size: 105%;
+}
+
+.sickness-classes {
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.label {
+    font-weight: 300;
+    font-size: 80%;
+    padding: .15em .45em .25em .45em;
+    /*margin: 0 .45em 0 .45em;*/
+    margin-right: 5px;
+}
+
+.label-red {
+    background-color: rgb(240, 0, 0);
+}
+
+.label-purple {
+    background-color: rgb(139, 1, 149);
+}
+
+.label-cyan {
+    background-color: rgb(0, 136, 136);
+}
+
+.label-blue {
+    background-color: rgb(19, 16, 159);
+}
+
+.label-yellow {
+    background-color: rgb(225, 180, 0);
+}
+
+.label-brown {
+    background-color: rgb(64, 43, 43);
+}
+
+.label-navy {
+    background-color: rgb(38, 30, 142);
+}
+
+.label-maroon {
+    background-color: rgb(128,0,0);
+}
+
+.label-black {
+    background-color: #000;
+}
+
+.label-dark-purple {
+    background-color: rgb(62, 18, 85);
+}
+
+.label-green {
+    background-color: rgb(0, 182, 0);
+}
+
+.label-orange {
+    background-color: rgb(255, 151, 0);
+}
+
+
+footer {
+    text-align: center;
+    color: #999;
+    /*color: #777;*/
+    font-size: 75%;
+    position: relative;
+    padding: 50px;
+}
+
+@media screen and (max-device-width: 768px)
+and (orientation: portrait) {
+    #search-module {
+        width: 250px;
+    }
+    
+    #results-module {
+        width: 350px;
+        padding: 15px;
+    }
+    
+    footer {
+        width: 350px;
+    }
+}
+
+@media screen and (max-device-width: 768px)
+and (orientation: landscape) {
+    #search-module {
+        width: 400px;
+    }
+    
+    #results-module {
+        width: 650px;
+        padding: 15px;
+    }
+}
