@@ -1,0 +1,228 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+body {
+  font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+#title {
+  font-weight: 300;
+  margin-left: 30px;
+  color: #999;
+}
+
+#buffer {
+  height: 30vh;
+}
+
+#search-module {
+  width: 500px;
+  margin: auto;
+  text-align: center;
+  margin-top: 20px;
+}
+
+input#searchbox {
+  height: 45px;
+  font-weight: 300;
+  font-size: 18px;
+  border: 2px solid #ccc;
+}
+
+input#searchbox::-webkit-input-placeholder {
+  font-weight: 300;
+}
+
+input#searchbox:focus {
+  outline: none;
+  /*box-shadow: 0 0 20px #92e2ff;*/
+  box-shadow: none;
+  border: 2px solid #1caff6;
+}
+
+#searchbutton {
+  height: 45px;
+  border: 2px solid #ccc;
+  border-left: none;
+  box-shadow: none;
+  position: relative;
+  left: 1px;
+  font-weight: 300;
+  font-size: 16px;
+  color: #999;
+}
+
+#searchbutton:hover,
+#searchbutton:focus {
+  outline: none;
+  background-color: white;
+  color: #333;
+}
+
+#container {
+  width: 500px;
+  margin: auto;
+}
+
+#history-button {
+  float: right;
+  font-size: 14px;
+  font-style: italic;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#history-module {
+  width: 1000px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#results-module {
+  width: 1000px;
+  margin: auto;
+  position: relative;
+  top: 20px;
+  margin-bottom: 50px;
+}
+
+.info {
+  color: #999;
+  font-size: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.list-result {
+  padding-top: 15px;
+}
+
+.list-title {
+  font-size: 130%;
+  color: rgb(212, 61, 33);
+}
+
+.list-title:hover,
+.list-title:focus {
+  color: rgb(182, 31, 3);
+}
+
+.search-term {
+  cursor: pointer;
+}
+
+.list-meridian {
+  font-size: 90%;
+  color: #333;
+}
+
+.list-description {
+  padding-top: 10px;
+  font-size: 105%;
+}
+
+.sickness-classes {
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+.label {
+  font-weight: 300;
+  font-size: 80%;
+  padding: .15em .45em .25em .45em;
+  /*margin: 0 .45em 0 .45em;*/
+  margin-right: 5px;
+}
+
+.label-red {
+  background-color: rgb(240, 0, 0);
+}
+
+.label-purple {
+  background-color: rgb(139, 1, 149);
+}
+
+.label-cyan {
+  background-color: rgb(0, 136, 136);
+}
+
+.label-blue {
+  background-color: rgb(19, 16, 159);
+}
+
+.label-yellow {
+  background-color: rgb(225, 180, 0);
+}
+
+.label-brown {
+  background-color: rgb(64, 43, 43);
+}
+
+.label-navy {
+  background-color: rgb(38, 30, 142);
+}
+
+.label-maroon {
+  background-color: rgb(128,0,0);
+}
+
+.label-black {
+  background-color: #000;
+}
+
+.label-dark-purple {
+  background-color: rgb(62, 18, 85);
+}
+
+.label-green {
+  background-color: rgb(0, 182, 0);
+}
+
+.label-orange {
+  background-color: rgb(255, 151, 0);
+}
+
+
+footer {
+  text-align: center;
+  color: #999;
+  /*color: #777;*/
+  font-size: 75%;
+  position: relative;
+  padding: 50px;
+}
+
+@media screen and (max-device-width: 768px)
+              and (orientation: portrait) {
+  #search-module {
+    width: 250px;
+  }
+
+  #results-module {
+    width: 350px;
+    padding: 15px;
+  }
+
+  footer {
+    width: 350px;
+  }
+}
+
+@media screen and (max-device-width: 768px)
+              and (orientation: landscape) {
+  #search-module {
+    width: 400px;
+  }
+
+  #results-module {
+    width: 650px;
+    padding: 15px;
+  }
+}
