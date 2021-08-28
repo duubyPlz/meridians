@@ -251,15 +251,7 @@ function jsonToMemory() {
       $.get(path, function(data) {
         console.log("DATA RECEIVED");
         console.log(data);
-        console.log(JSON.stringify(data));
-        var jsonData = JSON.stringify(JSON.parse(data))
-        console.log("JSONDATA");
-        console.log(jsonData);
-        if (jsonData) {
-          jsons.push(jsonData);
-        } else {
-          console.error("Unable to parse JSON.");
-        }
+        jsons.push(data);
       });
     }
   } catch (e) {
