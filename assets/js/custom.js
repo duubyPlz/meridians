@@ -246,6 +246,8 @@ function jsonToMemory() {
   try {
     for (var fileName of fileNames) {
       var path = directory + fileName;
+      console.log("PATH");
+      console.log(path);
       $.get(path, function(data) {
         if (JSON.parse(data)) {
           jsons.push(JSON.parse(data));
