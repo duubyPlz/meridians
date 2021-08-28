@@ -1,0 +1,70 @@
+TODO:
+    [x] change ui titles to chinese
+    [x] why do some 穴位's have asterisks? regex problem...
+    [x] in addition to description, add which meridian (collection name)
+    [x] make every sickness a link (delimit '、' & ': ')
+        [ ] fix 清熱明目、調理腸胃 titles (slice() everything except last element, join() on delimiter)
+    [ ] bold term before colon
+    [ ] keyword to display all
+    [ ] semicolon delimiter somewhere...
+    [ ] better search & bold regex: split input on each character, then OR them
+    [ ] history
+        [x] basic string
+        [ ] if searchstring same then don't add to history
+        [ ] breadcrumbs
+        [ ] with forward/back buttons
+
+BUGS:
+    [ ] 會陰
+        任脈
+        1: 1
+
+EPICS:
+Search for:                        Returns:
+    [x] sickness; e.g. "咳喘"            => [list] pressure points; e.g. "中府"
+    [x] pressure point                   => [list] sicknesses
+    [ ] meridian; e.g. "手太陰肺經"       => table(s)
+    [ ] sickness class; e.g. "血症"      => [rows] pressure points with search term as "true"
+
+Features:
+    [x] each result term should be a link, clicking on it will search for it instead
+        [x] [lists] will be like google results (add descriptions)
+    [x] bold query string in descriptions
+    [ ] display all meridian tables
+    [ ] edit page
+
+Maybe:
+   ([ ] on/off toggle to show/hide list descriptions)
+   ([ ] maybe way to reverse back to home)
+
+Collection names:
+     1.csv - 手太陰肺經
+     2.csv - 手陽明大腸經
+     3.csv - 手厥陰心包經
+     4.csv - 手少陽三焦經
+     5.csv - 手少陰心經
+     6.csv - 手太陽小腸經
+     7.csv - 足太陰脾經
+     8.csv - 足陽明胃經
+    10.csv - 足厥陰肝經
+    11.csv - 足少陽膽經a
+    12.csv - 足少陽膽經b
+    13.csv - 足少陰腎經
+    14.csv - 足太陽膀胱經
+    18.csv - 督脈
+    20.csv - 任脈
+
+Sickness classes:
+    0. 痛症 - red
+    1. 炎症 - purple
+    2. 痺症/攣痺 - cyan
+    3. 血病/血症 - blue
+    4. 氣管病 - yellow
+    5. 熱病/熱症 - brown
+    6. 情志 - navy
+    7. 耳症 - maroon
+    8. 眼症 - black
+    9. 鼻病 - dark purple (purple)
+   10. 男女科 - green (blue)
+   11. 排泄 - orange (brown)
+   12. other (shouldnt exist by the end) - default (grey)
