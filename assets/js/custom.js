@@ -57,6 +57,15 @@ function search(inputRaw) {
 
   var results = [];
   for (var i=0; i<collections.length; i++) {
+    // For every entry in collections,
+    // Find either:
+    //  {
+    //    其他: { '$regex': regex },
+    //  }
+    // OR:
+    // {
+    //   穴位: { '$regex': regex },
+    // }
     var currentQuery = collections[i].find({ $or: [{
       其他: { '$regex': regex }, // sickness
     }, {
@@ -71,6 +80,25 @@ function search(inputRaw) {
       }
     });
   }
+
+  // if type e.g. field 炎症 has a 1 value
+  // if fields 其他, 穴位 or 經絡 has a string value that matches .*input.*
+
+  // `results format:
+  // [{…}]
+  // [{
+    //   _id: "ZDaYJdGSWThPifQyW"
+  //   #: "7"
+  //   其他: "寧心安神和胃: 心肌炎、胃炎、胃出血、神經衰弱、精神分裂症、癲癇、失眠、口臭"
+  //   穴位: "大陵"
+  //   經絡: "手厥陰心包經"
+  //   情志: "1"
+  //   攣痺: "0"
+  //   炎症: "1"
+  //   熱症: "1"
+  //   痛症: "0"
+  //   血症: "1"
+  // }]
 
   // 3. Display results, i.e. points with wanted sickness
   if (results.length > 0) {
@@ -192,8 +220,58 @@ function search(inputRaw) {
 }
 
 function jsonToMemory() {
-  
+  var directory = 'assets/json/';
+  var fileNames = [
+    'collection1.json',
+    'collection2.json',
+    'collection3.json',
+    'collection4.json',
+    'collection5.json',
+    'collection6.json',
+    'collection7.json',
+    'collection8.json',
+    'collection10.json',
+    'collection11.json',
+    'collection12.json',
+    'collection13.json',
+    'collection14.json',
+    'collection18.json',
+    'collection20.json',
+  ];
+
+  try {
+    var jsons = [];
+    for (var fileName of fileNames) {
+      var path = directory + fileName;
+      $.get(path, function(data) {
+        // console.log("DATA");
+        // console.log(data);
+        console.log(JSON.parse(data));
+        if (JSON.parse(data)) {
+          console.log("DERP");
+          jsons.push(JSON.parse(data));
+          console.log(jsons);
+        } else {
+          console.log("HERP");
+        }
+      });
+      // break; // XXX @cku
+    }
+    console.log("CONTENTS");
+    console.log(jsons);
+    /*
+    [
+      [ { #: "...", 其他: "...", ... }, {}, ... ],
+      [ ... ],
+      ...
+    ]
+    */
+  } catch (e) {
+    console.warn(e);
+  }
 }
 
 // > Main
+console.log("STARTING...");
 jsonToMemory()
+console.log("DONE");
